@@ -4,7 +4,8 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   res.status(200).json({
-    message: "All blog posts fetched successfully",
+   message: "All blog posts fetched successfully (modular architecture)"
+
   });
 });
 
