@@ -1,13 +1,15 @@
 const express = require("express");
+const postsController = require("../controllers/posts.controller");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.status(200).json({
-   message: "All blog posts fetched successfully (modular architecture)"
-
-  });
-});
+/**
+ * POST Routes
+ */
+router.get("/", postsController.getAllPosts);
+router.get("/:id", postsController.getPostById);
+router.post("/", postsController.createPost);
+router.put("/:id", postsController.updatePost);
+router.delete("/:id", postsController.deletePost);
 
 module.exports = router;
-
